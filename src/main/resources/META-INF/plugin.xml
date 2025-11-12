@@ -1,0 +1,58 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.ddlab.rnd.temp-plug-1</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-name -->
+    <name>Temp-plug-1</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor url="https://www.yourcompany.com">YourCompany</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-description -->
+    <description><![CDATA[
+        Enter short description for your plugin here.<br>
+        <em>most HTML tags may be used</em>
+    ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+
+    </extensions>
+<!--    <actions>-->
+<!--        <group id="MyPluginContextMenu" popup="true" text="My Plugin Actions">-->
+<!--            <add-to-group group-id="ProjectViewPopupMenu" anchor="first"/>-->
+<!--            <action id="MyPluginActionId" class="com.ddlab.rnd.AskQuestionAction"-->
+<!--                    text="Perform My Action" description="Description of my action"/>-->
+<!--        </group>-->
+<!--    </actions>-->
+
+    <actions>
+        <action id="MyPlugin.MyCustomEditorAction"
+                class="com.ddlab.rnd.MyCustomEditorAction"
+                text="My Custom Editor Action"
+                description="Performs a custom action in the editor">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
+    </actions>
+
+<!--    <actions>-->
+<!--&lt;!&ndash;    <action&ndash;&gt;-->
+<!--&lt;!&ndash;            id="StackOverflow.AskQuestion.ToolsMenu"&ndash;&gt;-->
+<!--&lt;!&ndash;            class="com.ddlab.rnd.AskQuestionAction"&ndash;&gt;-->
+<!--&lt;!&ndash;            text="Ask Question on Stack Overflow"&ndash;&gt;-->
+<!--&lt;!&ndash;            description="Ask a Question on Stack Overflow">&ndash;&gt;-->
+<!--&lt;!&ndash;        <add-to-group group-id="ToolsMenu" anchor="last"/>&ndash;&gt;-->
+<!--&lt;!&ndash;    </action>&ndash;&gt;-->
+<!--        <action class="com.ddlab.rnd.AskQuestionAction">-->
+<!--            <add-to-group group-id="ProjectViewPopupMenu"/>-->
+<!--        </action>-->
+<!--    </actions>-->
+</idea-plugin>
