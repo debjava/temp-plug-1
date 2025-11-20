@@ -25,7 +25,24 @@
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
 
+        <applicationService
+                serviceImplementation="com.ddlab.rnd.setting.MySettingsState"/>
+
+        <applicationConfigurable
+                id="com.example.settings"
+                displayName="My Plugin Settings"
+                instance="com.ddlab.rnd.setting.MySettingsConfigurable"/>
+
     </extensions>
+
+    <!--<extensions defaultExtensionNs="com.intellij">
+        <applicationConfigurable
+                id="com.example.settings"
+                displayName="My Plugin Settings"
+                instance="com.ddlab.rnd.setting.MySettingsConfigurable"/>
+    </extensions>-->
+
+
 <!--    <actions>-->
 <!--        <group id="MyPluginContextMenu" popup="true" text="My Plugin Actions">-->
 <!--            <add-to-group group-id="ProjectViewPopupMenu" anchor="first"/>-->
@@ -55,4 +72,7 @@
 <!--            <add-to-group group-id="ProjectViewPopupMenu"/>-->
 <!--        </action>-->
 <!--    </actions>-->
+
+
+
 </idea-plugin>

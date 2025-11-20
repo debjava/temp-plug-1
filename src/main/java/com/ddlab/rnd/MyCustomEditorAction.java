@@ -1,5 +1,6 @@
 package com.ddlab.rnd;
 
+import com.ddlab.rnd.setting.MySettingsState;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
@@ -19,6 +20,14 @@ import com.intellij.psi.PsiFile;
 
             String text = file.getFileDocument().getText();
             System.out.println("Text : "+text);
+
+            MySettingsState settings = MySettingsState.getInstance();
+
+//            boolean enabled = settings.enableFeature;
+//            String endpoint = settings.apiEndpoint;
+
+//            System.out.println("Enabled: "+enabled);
+//            System.out.println("End Point: "+endpoint);
 
             // Implement your action logic here
             // e.g., get the current editor, caret position, etc.
