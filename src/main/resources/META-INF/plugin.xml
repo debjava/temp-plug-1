@@ -25,13 +25,16 @@
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
 
+        <!--<applicationService
+                serviceImplementation="com.ddlab.rnd.setting.MySettingsState"/>-->
+
         <applicationService
-                serviceImplementation="com.ddlab.rnd.setting.MySettingsState"/>
+                serviceImplementation="com.ddlab.rnd.setting1.MyPluginSettingState"/>
 
         <applicationConfigurable
                 id="com.example.settings"
                 displayName="My Plugin Settings"
-                instance="com.ddlab.rnd.setting.MySettingsConfigurable"/>
+                instance="com.ddlab.rnd.setting1.MyPluginConfigurable"/>
 
     </extensions>
 

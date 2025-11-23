@@ -5,6 +5,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MySettingsComponent {
 
@@ -25,7 +27,11 @@ public class MySettingsComponent {
     private String llmEndPointUrlStr;
 
 
-    String[] fruits = {"Apple", "Banana", "Cherry", "Date"};
+    private String[] fruits = {"Apple", "Banana", "Cherry", "Date"};
+
+
+
+    private java.util.List<String> comboItems = new ArrayList<String>();
 
 
 
@@ -133,6 +139,7 @@ public class MySettingsComponent {
 //                String[] fruits = {"Apple", "Banana", "Cherry", "Date"};
                 for (String fruit : fruits) {
                     llmModelComboBox.addItem(fruit);
+                    comboItems.add(fruit);
                 }
 
             }
@@ -227,9 +234,9 @@ public class MySettingsComponent {
 
     public String getSelectedLlmModelStr() {
         // populate first
-        for (String fruit : fruits) {
-            llmModelComboBox.addItem(fruit);
-        }
+//        for (String fruit : fruits) {
+//            llmModelComboBox.addItem(fruit);
+//        }
         selectedLlmModelStr = (String) llmModelComboBox.getSelectedItem();
         return selectedLlmModelStr;
     }
@@ -252,6 +259,18 @@ public class MySettingsComponent {
     public void setLlmEndPointUrlStr(String llmEndPointUrlStr) {
         llmApiEndPointTxt.setText(llmEndPointUrlStr);
 //        this.llmEndPointUrlStr = llmEndPointUrlStr;
+    }
+
+    public JComboBox getLlmModelComboBox() {
+        return llmModelComboBox;
+    }
+
+    public List<String> getComboItems() {
+        return comboItems;
+    }
+
+    public void setComboItems(List<String> comboItems) {
+        this.comboItems = comboItems;
     }
 
 }
