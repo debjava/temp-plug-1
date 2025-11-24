@@ -36,7 +36,6 @@ public class MyPluginConfigurable implements Configurable {
         String clientIdSr = component.getClientIdStr();
         String selectComboItem = component.getSelectedLlmModelStr();
 
-        settings.se
 
         settings.setClientIdStr(clientIdSr);
         settings.setComboSelection((String) selectComboItem);
