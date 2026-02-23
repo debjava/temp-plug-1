@@ -21,6 +21,8 @@ public class AiDetailsPanel extends JPanel {
 	private JTextField oauthEndPointTxt;
 	private JTextField llmApiEndPointTxt;
 	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
 	
 	public AiDetailsPanel() {
 		
@@ -29,10 +31,13 @@ public class AiDetailsPanel extends JPanel {
 		
 		
 		GridBagLayout gbl_aiDetailsPanel = new GridBagLayout();
-		gbl_aiDetailsPanel.columnWidths = new int[]{0, 0, 0};
+		gbl_aiDetailsPanel.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0};
 		gbl_aiDetailsPanel.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0};
-		gbl_aiDetailsPanel.columnWeights = new double[]{0.0, 1.0, Double.MIN_VALUE};
+//		gbl_aiDetailsPanel.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0};
+		gbl_aiDetailsPanel.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0};
+//		gbl_aiDetailsPanel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		gbl_aiDetailsPanel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+//		gbl_aiDetailsPanel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,0.0, Double.MIN_VALUE};
 		setLayout(gbl_aiDetailsPanel);
 		
 		JLabel clienIdLbl = new JLabel("Client Id:");
@@ -45,12 +50,30 @@ public class AiDetailsPanel extends JPanel {
 		
 		clientIdTxt = new JTextField();
 		GridBagConstraints gbc_clientIdTxt = new GridBagConstraints();
+		gbc_clientIdTxt.gridwidth = 6;
 		gbc_clientIdTxt.insets = new Insets(0, 0, 5, 5);
 		gbc_clientIdTxt.fill = GridBagConstraints.HORIZONTAL;
 		gbc_clientIdTxt.gridx = 1;
 		gbc_clientIdTxt.gridy = 0;
 		add(clientIdTxt, gbc_clientIdTxt);
 		clientIdTxt.setColumns(10);
+		
+		JLabel lblNewLabel_2 = new JLabel("New label");
+		GridBagConstraints gbc_lblNewLabel_2 = new GridBagConstraints();
+		gbc_lblNewLabel_2.anchor = GridBagConstraints.EAST;
+		gbc_lblNewLabel_2.insets = new Insets(0, 0, 5, 5);
+		gbc_lblNewLabel_2.gridx = 7;
+		gbc_lblNewLabel_2.gridy = 0;
+		add(lblNewLabel_2, gbc_lblNewLabel_2);
+		
+		textField_2 = new JTextField();
+		GridBagConstraints gbc_textField_2 = new GridBagConstraints();
+		gbc_textField_2.insets = new Insets(0, 0, 5, 0);
+		gbc_textField_2.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField_2.gridx = 8;
+		gbc_textField_2.gridy = 0;
+		add(textField_2, gbc_textField_2);
+		textField_2.setColumns(10);
 		
 		JLabel clientSecretLbl = new JLabel("Client Secret:");
 		GridBagConstraints gbc_clientSecretLbl = new GridBagConstraints();
@@ -62,6 +85,7 @@ public class AiDetailsPanel extends JPanel {
 		
 		clientSecretTxt = new JTextField();
 		GridBagConstraints gbc_clientSecretTxt = new GridBagConstraints();
+		gbc_clientSecretTxt.gridwidth = 3;
 		gbc_clientSecretTxt.insets = new Insets(0, 0, 5, 5);
 		gbc_clientSecretTxt.fill = GridBagConstraints.HORIZONTAL;
 		gbc_clientSecretTxt.gridx = 1;
@@ -79,6 +103,7 @@ public class AiDetailsPanel extends JPanel {
 		
 		oauthEndPointTxt = new JTextField();
 		GridBagConstraints gbc_oauthEndPointTxt = new GridBagConstraints();
+		gbc_oauthEndPointTxt.gridwidth = 3;
 		gbc_oauthEndPointTxt.insets = new Insets(0, 0, 5, 5);
 		gbc_oauthEndPointTxt.fill = GridBagConstraints.HORIZONTAL;
 		gbc_oauthEndPointTxt.gridx = 1;
@@ -96,18 +121,18 @@ public class AiDetailsPanel extends JPanel {
 		
 		JComboBox<String> llmModelcomboBox = new JComboBox<String>();
 		GridBagConstraints gbc_llmModelcomboBox = new GridBagConstraints();
-		gbc_llmModelcomboBox.insets = new Insets(0, 0, 5, 5);
+		gbc_llmModelcomboBox.gridwidth = 5;
 		gbc_llmModelcomboBox.fill = GridBagConstraints.HORIZONTAL;
+		gbc_llmModelcomboBox.insets = new Insets(0, 0, 5, 5);
 		gbc_llmModelcomboBox.gridx = 1;
 		gbc_llmModelcomboBox.gridy = 3;
 		add(llmModelcomboBox, gbc_llmModelcomboBox);
 		
 		JButton btnNewButton = new JButton("Get Models");
 		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
-		gbc_btnNewButton.gridwidth = 2;
-		gbc_btnNewButton.insets = new Insets(0, 0, 5, 0);
+		gbc_btnNewButton.insets = new Insets(0, 0, 5, 5);
 		gbc_btnNewButton.anchor = GridBagConstraints.EAST;
-		gbc_btnNewButton.gridx = 2;
+		gbc_btnNewButton.gridx = 6;
 		gbc_btnNewButton.gridy = 3;
 		add(btnNewButton, gbc_btnNewButton);
 		
@@ -131,10 +156,50 @@ public class AiDetailsPanel extends JPanel {
 		
 		JButton testBtn = new JButton("Test");
 		GridBagConstraints gbc_testBtn = new GridBagConstraints();
-		gbc_testBtn.insets = new Insets(0, 0, 5, 0);
+		gbc_testBtn.anchor = GridBagConstraints.EAST;
+		gbc_testBtn.insets = new Insets(0, 0, 5, 5);
 		gbc_testBtn.gridx = 3;
 		gbc_testBtn.gridy = 4;
 		add(testBtn, gbc_testBtn);
+		
+		JLabel llmModelType = new JLabel("LLM Model Type");
+		GridBagConstraints gbc_llmModelType = new GridBagConstraints();
+		gbc_llmModelType.anchor = GridBagConstraints.EAST;
+		gbc_llmModelType.insets = new Insets(0, 0, 0, 5);
+		gbc_llmModelType.gridx = 0;
+		gbc_llmModelType.gridy = 5;
+		add(llmModelType, gbc_llmModelType);
+		
+		textField_1 = new JTextField();
+		GridBagConstraints gbc_textField_1 = new GridBagConstraints();
+		gbc_textField_1.anchor = GridBagConstraints.WEST;
+		gbc_textField_1.insets = new Insets(0, 0, 0, 5);
+		gbc_textField_1.gridx = 1;
+		gbc_textField_1.gridy = 5;
+		add(textField_1, gbc_textField_1);
+		textField_1.setColumns(10);
+		
+		JLabel llmModelSize = new JLabel("New label");
+		GridBagConstraints gbc_llmModelSize = new GridBagConstraints();
+		gbc_llmModelSize.fill = GridBagConstraints.HORIZONTAL;
+		gbc_llmModelSize.insets = new Insets(0, 0, 0, 5);
+		gbc_llmModelSize.gridx = 2;
+		gbc_llmModelSize.gridy = 5;
+		add(llmModelSize, gbc_llmModelSize);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
+		gbc_lblNewLabel.insets = new Insets(0, 0, 0, 5);
+		gbc_lblNewLabel.gridx = 4;
+		gbc_lblNewLabel.gridy = 5;
+		add(lblNewLabel, gbc_lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
+		gbc_lblNewLabel_1.insets = new Insets(0, 0, 0, 5);
+		gbc_lblNewLabel_1.gridx = 6;
+		gbc_lblNewLabel_1.gridy = 5;
+		add(lblNewLabel_1, gbc_lblNewLabel_1);
 		
 //		JLabel aiInfoLbl = new JLabel("* mark fields are required to fill");
 //		aiInfoLbl.setForeground(new Color(255, 0, 0));

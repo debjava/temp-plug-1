@@ -24,6 +24,13 @@ public class SnykDetailsPanel extends JPanel {
 		gbl_snykPanel.columnWeights = new double[] { 0.0, 1.0, Double.MIN_VALUE };
 		gbl_snykPanel.rowWeights = new double[] { 0.0, 0.0, 0.0, Double.MIN_VALUE };
 		setLayout(gbl_snykPanel);
+		
+//		GridBagLayout gbl_snykPanel = new GridBagLayout();
+//		gbl_snykPanel.columnWidths = new int[]{0, 0, 0};
+//		gbl_snykPanel.rowHeights = new int[]{0, 0, 0, 0, 0, 0};
+//		gbl_snykPanel.columnWeights = new double[]{0.0, 1.0, Double.MIN_VALUE};
+//		gbl_snykPanel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+//		setLayout(gbl_snykPanel);
 
 		JLabel snykUriLbl = new JLabel("Snyk Endpoint URI:");
 		GridBagConstraints gbc_snykUriLbl = new GridBagConstraints();
